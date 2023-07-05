@@ -4,7 +4,9 @@ from . import views
 # from cureent dir import veiws
 
 urlpatterns = [
-    path('home',views.home),
-    path('secondhome',views.secondhome)
+    path('',views.home),
+    path('about',views.about,name="about"),
+    path('contact',views.contact)
+    # path('secondhome',views.secondhome)
     
 ]
