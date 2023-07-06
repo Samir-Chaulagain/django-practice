@@ -38,12 +38,23 @@
     <!-- <h1>Hello, world!</h1>
      -->
      <div class="containeer mt-4">
-        <a href="{% url 'create' %}" class="btn btn-danger">Create post</a>
-        <h1 class="text-center">post</h1>
-        <div class="bg-dark text-white textcenter">
-            <h3 class="text-center">DUMMY</h3>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, libero! Vel ea sed sit sequi veniam provident veritatis. Perferendis adipisci, animi necessitatibus illo corporis voluptatem nulla officia voluptate doloribus ipsam quibusdam quasi aliquam assumenda exercitationem, repellat laborum quis soluta tempore dicta! Itaque quod officiis neque ipsam natus velit, est sapiente et? Sequi quis iste autem amet asperiores! Vel reprehenderit corrupti doloremque vitae velit cupiditate magnam debitis nemo molestias ipsa enim dolor, at, suscipit rem mollitia.</p>
-        </div>
+        <a href="{% url 'homepage'%}" class="btn btn-danger">go back</a>
+        <h1 class="text-center">Createpost</h1>
+       <form action="" class="form-group">
+        <label for="title">
+            Tittle
+        </label>
+        <input type="text" class="form-control">
+        <label for="description">Desc
+            
+        </label>
+        <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+        <center>
+
+            <button type="submit" class="btn btn-primary mt-5">Post</button>
+        </center>
+        
+       </form>
      </div>
     
 
