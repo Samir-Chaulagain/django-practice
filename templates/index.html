@@ -44,6 +44,7 @@
         <div class="bg-dark text-white textcenter">
             <h3 class="text-center">{{post.title}}</h3>
             <p class="lead">{{post.description}}</p>
+            <a href="{% url 'deletepost' post.id %}" class="btn btn-danger">Deletepost</a>
 
             <!-- using loop to take multipe data from database -->
         </div>

@@ -9,6 +9,8 @@ urlpatterns = [
     # path('contact',views.contact)
     # path('secondhome',views.secondhome)
     path('',views.index,name="homepage"),
-    path('create',views.create,name="create")
+    path('create',views.create,name="create"),
+    path('delete/<int:id>',views.delete,name="deletepost")
+     
     
 ]

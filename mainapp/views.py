@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse,redirect
 from .models import Post
 
 # Create your views here.
@@ -23,3 +23,6 @@ def create(request):
         newpost.save()
         
     return render(request,"create.html")
+def delete(request,id):
+    Post.objects.get(id=id).delete()
+    return redirect("homepage")
