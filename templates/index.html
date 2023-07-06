@@ -39,11 +39,17 @@
      -->
      <div class="containeer mt-4">
         <a href="{% url 'create' %}" class="btn btn-danger">Create post</a>
-        <h1 class="text-center">post</h1>
+        <h1 class="text-center">Posts</h1>
+        {% for post in posts %}
         <div class="bg-dark text-white textcenter">
-            <h3 class="text-center">DUMMY</h3>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, libero! Vel ea sed sit sequi veniam provident veritatis. Perferendis adipisci, animi necessitatibus illo corporis voluptatem nulla officia voluptate doloribus ipsam quibusdam quasi aliquam assumenda exercitationem, repellat laborum quis soluta tempore dicta! Itaque quod officiis neque ipsam natus velit, est sapiente et? Sequi quis iste autem amet asperiores! Vel reprehenderit corrupti doloremque vitae velit cupiditate magnam debitis nemo molestias ipsa enim dolor, at, suscipit rem mollitia.</p>
+            <h3 class="text-center">{{post.title}}</h3>
+            <p class="lead">{{post.description}}</p>
+
+            <!-- using loop to take multipe data from database -->
         </div>
+        {% empty %}
+        <h2>NO post to display</h2>
+        {% endfor %}
      </div>
     
 

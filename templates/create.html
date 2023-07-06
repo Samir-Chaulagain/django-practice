@@ -39,16 +39,17 @@
      -->
      <div class="containeer mt-4">
         <a href="{% url 'homepage'%}" class="btn btn-danger">go back</a>
-        <h1 class="text-center">Createpost</h1>
-       <form action="" class="form-group">
+        <h1 class="text-center">Create post</h1>
+       <form action="" class="form-group" method="post">
+        {%csrf_token %}
         <label for="title">
             Tittle
         </label>
-        <input type="text" class="form-control">
+        <input type="text" name="title" class="form-control">
         <label for="description">Desc
             
         </label>
-        <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+        <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
         <center>
 
             <button type="submit" class="btn btn-primary mt-5">Post</button>

@@ -1,4 +1,5 @@
 from django.shortcuts import render,HttpResponse
+from .models import Post
 
 # Create your views here.
 
@@ -12,6 +13,13 @@ from django.shortcuts import render,HttpResponse
 #     return render(request,"contact.html")
 
 def index(request):
-    return render(request,"index.html")
+    posts=Post.objects.all() #ORM
+    return render(request,"index.html",{"posts":posts})
 def create(request):
+    if request.method=='POST':
+        title=request.POST["title"]
+        description=request.POST["description"]
+        newpost=Post.objects.create(title=title,description=description)
+        newpost.save()
+        
     return render(request,"create.html")
