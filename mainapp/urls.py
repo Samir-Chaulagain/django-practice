@@ -4,9 +4,13 @@ from . import views
 # from cureent dir import veiws
 
 urlpatterns = [
-    path('hello/<str:name>',views.home),
-    path('about',views.about,name="about"),
-    path('contact',views.contact)
+    # path('hello/<str:name>',views.home),
+    # path('about',views.about,name="about"),
+    # path('contact',views.contact)
     # path('secondhome',views.secondhome)
+    path('',views.index,name="homepage"),
+    path('create',views.create,name="create"),
+    path('delete/<int:id>',views.delete,name="deletepost")
+     
     
 ]

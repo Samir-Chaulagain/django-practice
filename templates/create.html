@@ -38,19 +38,24 @@
     <!-- <h1>Hello, world!</h1>
      -->
      <div class="containeer mt-4">
-        <a href="{% url 'create' %}" class="btn btn-danger">Create post</a>
-        <h1 class="text-center">Posts</h1>
-        {% for post in posts %}
-        <div class="bg-dark text-white textcenter">
-            <h3 class="text-center">{{post.title}}</h3>
-            <p class="lead">{{post.description}}</p>
-            <a href="{% url 'deletepost' post.id %}" class="btn btn-danger">Deletepost</a>
+        <a href="{% url 'homepage'%}" class="btn btn-danger">go back</a>
+        <h1 class="text-center">Create post</h1>
+       <form action="" class="form-group" method="post">
+        {%csrf_token %}
+        <label for="title">
+            Tittle
+        </label>
+        <input type="text" name="title" class="form-control">
+        <label for="description">Desc
+            
+        </label>
+        <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
+        <center>
 
-            <!-- using loop to take multipe data from database -->
-        </div>
-        {% empty %}
-        <h2>NO post to display</h2>
-        {% endfor %}
+            <button type="submit" class="btn btn-primary mt-5">Post</button>
+        </center>
+        
+       </form>
      </div>
     
 
