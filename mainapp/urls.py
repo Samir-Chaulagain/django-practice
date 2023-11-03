@@ -10,7 +10,12 @@ urlpatterns = [
     # path('secondhome',views.secondhome)
     path('',views.index,name="homepage"),
     path('create',views.create,name="create"),
-    path('delete/<int:id>',views.delete,name="deletepost")
+    path('delete/<int:id>',views.delete,name="deletepost"),
+    path('signup', views.signup, name='signup'),
+    path('activate/<uidb64>/<token>', views.activate, name='activate'),
+    path('signin', views.signin, name='signin'),
+    path('signout', views.signout, name='signout'),
+
      
     
 ]

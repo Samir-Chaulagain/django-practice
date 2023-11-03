@@ -39,19 +39,46 @@
      -->
      <div class="containeer mt-4">
         <a href="{% url 'create' %}" class="btn btn-danger">Create post</a>
+        <a href="{% url 'signup'%}" class="btn btn-primary">Deletepost</a>
+        <a href="{% url 'signin'%}" class="btn btn-secondary">Deletepost</a>
         <h1 class="text-center">Posts</h1>
         {% for post in posts %}
         <div class="bg-dark text-white textcenter">
             <h3 class="text-center">{{post.title}}</h3>
             <p class="lead">{{post.description}}</p>
             <a href="{% url 'deletepost' post.id %}" class="btn btn-danger">Deletepost</a>
+            <a href="{% url 'signup'%}" class="btn btn-primary">Deletepost</a>
+            <a href="{% url 'signin'%}" class="btn btn-secondary">Deletepost</a>
+
+            {% if user.is_authenticated %}
+            <h3>Hello {{fname}}!</h3>
+            <h4>You're successfully logged in.</h4>
+            <button type="submit"><a href="/signout">SignOut</a></button>
+            {% else %}
+            <button type="submit"><a href="/signup">SignUp</a></button>
+            <br />
+            <br />
+            <button type="submit"><a href="/signin">SignIn</a></button>
+            {% endif %}
 
             <!-- using loop to take multipe data from database -->
         </div>
         {% empty %}
         <h2>NO post to display</h2>
         {% endfor %}
+
      </div>
+
+    {% if user.is_authenticated %}
+    <h3>Hello {{fname}}!</h3>
+    <h4>You're successfully logged in.</h4>
+    <button type="submit"><a href="/signout">SignOut</a></button>
+    {% else %}
+    <button type="submit"><a href="/signup">SignUp</a></button>
+    <br />
+    <br />
+    <button type="submit"><a href="/signin">SignIn</a></button>
+    {% endif %}
     
 
     <!-- Optional JavaScript -->
